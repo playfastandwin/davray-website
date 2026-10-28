@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Davray & Co takes over companies with a name, a know-how and a following, and rebuilds everything behind them.">
+<title>Davray &amp; Co</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2312243F'/%3E%3Cpolygon points='12.4,4.3 24,16 12.4,27.7 8,23.4 15.5,16 8,8.5' fill='none' stroke='%23ffffff' stroke-width='1.3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+<style>
+/* Layout: single-look page, navy dominant; one cream band for the manifesto and playbooks; orange for the media blocks. Motif: one line that falls and bounces higher. */
+:root{
+  --navy:#12243F; --navy-deep:#0C1A2F; --navy-lift:#1B3560;
+  --cream:#F0EAD9; --cream-dk:#E4DBCA; --ink:#1A1A1A; --mid-dark:#4A4A4A;
+  --fog:rgba(240,234,217,.62); --hair:rgba(240,234,217,.16);
+  --orange:#C4501A; --orange-hi:#D4622A;
+  --f-sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --wrap:1200px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--navy);color:var(--cream);font-family:var(--f-sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange-hi);outline-offset:4px}
+p,h1,h2,h3{margin:0}
+h1,h2,h3{font-weight:500;letter-spacing:-.035em;line-height:.98;text-wrap:balance}
+.it{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.015em}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--navy)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:20px;gap:16px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-serif);font-size:1.4rem;text-decoration:none;color:var(--orange-hi)}
+.logo svg{width:30px;height:26px;flex:none}
+.pill{font-size:.9rem;text-decoration:none;border:1px solid var(--hair);padding:9px 16px;border-radius:999px;transition:background .2s,border-color .2s;white-space:nowrap}
+.pill:hover{background:var(--orange);border-color:var(--orange);color:#fff}
+
+/* Hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{padding-block:clamp(24px,3.5vw,48px) 0}
+.hero h1{font-size:clamp(3.2rem,6.4vw,6.6rem);max-width:20ch}
+.curve.curve-m{display:none}
+.hero h1 .it{color:var(--orange-hi)}
+.hero .sub{margin-top:clamp(20px,3vw,32px);font-size:clamp(1.25rem,2.4vw,1.9rem);color:var(--fog);letter-spacing:-.01em}
+.curve{display:block;width:100%;height:auto;margin-top:clamp(0px,1vw,12px)}
+.curve .line{fill:none;stroke:var(--cream);stroke-width:4.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s cubic-bezier(.45,0,.25,1) .2s forwards}
+.curve-m .line{stroke-width:6.5}
+.curve .area{display:none}
+.curve .floor{stroke:rgba(240,234,217,.18);stroke-width:1;stroke-dasharray:4 6;vector-effect:non-scaling-stroke}
+.curve text{font-family:var(--f-sans);font-size:16px;font-weight:600;letter-spacing:.14em;fill:var(--cream)}
+.curve text.dim{fill:rgba(240,234,217,.55)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.curve .line{animation:none;stroke-dashoffset:0}.curve .area{animation:none;opacity:1}}
+
+/* Manifesto (cream band) */
+.cream{background:var(--cream);color:var(--ink)}
+.manifesto .wrap{padding-block:clamp(80px,12vw,160px);display:grid;gap:36px}
+.manifesto h2{font-size:clamp(2.2rem,5.6vw,4.8rem);max-width:18ch}
+.manifesto p{font-size:clamp(1.05rem,1.6vw,1.25rem);color:var(--mid-dark);max-width:52ch}
+
+/* Toolbox */
+.tools-sec .wrap{padding-block:clamp(80px,12vw,150px)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,64px)}
+.sec-head h2{font-size:clamp(2.4rem,6vw,5rem);max-width:12ch}
+.sec-head p{color:var(--fog);max-width:34ch}
+.cream .sec-head p{color:var(--mid-dark)}
+.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--hair);border:2px solid var(--hair)}
+.tool{background:var(--navy);padding:24px;display:grid;gap:18px;align-content:start;min-width:0}
+.tool .ui{height:132px;background:var(--navy-deep);border-radius:10px;padding:14px;display:grid;gap:7px;align-content:start;overflow:hidden}
+.tool h3{font-family:var(--f-serif);font-weight:400;font-size:2.1rem;letter-spacing:-.01em}
+.tool p{color:var(--fog);font-size:.98rem}
+.tool .where{font-size:.82rem;color:var(--fog);border-top:1px solid var(--hair);padding-top:12px}
+/* mini interfaces */
+.bub{font-size:.72rem;padding:6px 10px;border-radius:12px;max-width:80%;line-height:1.3}
+.bub.in{background:var(--navy-lift)}
+.bub.out{background:var(--orange);justify-self:end;color:#fff}
+.row{display:flex;justify-content:space-between;gap:8px;font-size:.72rem;padding:5px 8px;background:var(--navy-lift);border-radius:6px}
+.row .ok{color:var(--orange-hi)}
+.bars{display:flex;align-items:end;gap:6px;height:104px}
+.bars span{flex:1;background:var(--navy-lift);border-radius:3px 3px 0 0}
+.bars span:last-child{background:var(--orange-hi)}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.tiles span{aspect-ratio:3/4;background:var(--navy-lift);border-radius:3px}
+.tiles span.on{background:var(--orange-hi)}
+.spark{width:100%;height:104px}
+
+/* Playbooks */
+.plays-sec .wrap{padding-block:clamp(80px,12vw,150px)}
+.plays{display:grid;gap:16px}
+.play{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr) minmax(0,1fr);border-top:2px solid var(--ink);padding-top:22px;gap:24px}
+.play h3{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.play .tag{display:inline-block;margin-top:12px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--orange)}
+.col{display:grid;gap:6px;align-content:start}
+.col span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--mid-dark)}
+.col p{font-size:1.02rem}
+.col.after p{color:var(--ink)}
+.col.before p{color:var(--mid-dark)}
+.plays-note{margin-top:28px;font-size:.88rem;color:var(--mid-dark)}
+
+/* Media: orange blocks */
+.media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--navy)}
+.m{background:var(--orange);color:#fff;text-decoration:none;display:grid;gap:12px;align-content:start;padding-block:clamp(36px,5vw,60px);padding-inline:clamp(20px,5vw,72px)}
+.m .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8}
+.m h3{font-family:var(--f-serif);font-weight:400;font-size:clamp(1.6rem,2.6vw,2.1rem);letter-spacing:-.01em}
+.m p{font-size:1rem;max-width:36ch;opacity:.92}
+.m .go{font-size:.95rem;font-weight:500;text-decoration:underline;text-underline-offset:4px}
+
+/* Founder */
+.founder .wrap{padding-block:clamp(72px,10vw,128px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.founder img{display:block;width:clamp(140px,16vw,200px);height:auto;max-width:100%;filter:grayscale(1)}
+.founder .txt{display:grid;gap:18px;max-width:60ch}
+.founder h2{font-family:var(--f-serif);font-weight:400;letter-spacing:-.01em;font-size:clamp(2rem,3.6vw,2.8rem)}
+.founder .role{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--orange-hi);margin-top:-8px}
+.founder p{font-size:1.08rem;color:var(--fog)}
+.founder p.lead{color:var(--cream)}
+
+/* Footer */
+footer{background:var(--navy-deep);color:var(--fog);font-size:.85rem}
+footer .wrap{padding-block:48px 36px;display:grid;gap:36px}
+footer .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr);gap:28px}
+footer .brand{font-family:var(--f-serif);font-size:1.25rem;color:var(--orange-hi);display:inline-flex;align-items:center;gap:8px}
+footer .brand svg{width:18px;height:22px}
+footer address{font-style:normal;line-height:1.7;margin-top:12px}
+footer h4{margin:0 0 12px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--cream)}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--orange-hi)}
+footer .base{border-top:1px solid var(--hair);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:900px){
+  .tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .play{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .play>div:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .tools,.play,.media{grid-template-columns:minmax(0,1fr)}
+  .top .wrap{padding-block:14px}
+  .logo{font-size:1.2rem}
+  .logo svg{width:24px;height:21px}
+  .pill{padding:8px 13px;font-size:.85rem}
+  .hero h1{font-size:clamp(2.9rem,13.5vw,4.4rem);max-width:11ch}
+  .curve.curve-d{display:none}
+  .curve.curve-m{display:block}
+  .curve text{font-size:20px}
+  .tool .ui{height:120px}
+  .sec-head{margin-bottom:32px}
+  .founder .wrap{grid-template-columns:minmax(0,1fr)}
+  .founder img{width:150px}
+  footer .cols{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Davray &amp; Co, home">
+      <svg viewBox="6 3 20 26" fill="none" aria-hidden="true">
+        <polygon points="12.4,4.3 24,16 12.4,27.7 8,23.4 15.5,16 8,8.5" stroke="#FFFFFF" stroke-width="1.6"/>
+      </svg>
+      <span>Davray &amp; Co</span>
+    </a>
+    <a class="pill" href="mailto:contact@davray.co">Contact us</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Some companies deserve a <span class="it">second bounce.</span></h1>
+      <p class="sub">We keep what works. Modernise everything else.</p>
+    </div>
+    <svg class="curve curve-m" viewBox="0 0 600 440" role="img" aria-label="A line falls to the floor, then rises higher than where it started.">
+      <line class="floor" x1="0" y1="372" x2="600" y2="372"/>
+      <path id="bounce-m" class="line" pathLength="1" d="M40 110 C135 110 187 170 232 350 C239 376 257 376 264 350 C317 150 421 70 560 40"/>
+      <text class="dim" x="248" y="412" text-anchor="middle">THE LOW POINT</text>
+      <text x="560" y="24" text-anchor="end">THE SECOND BOUNCE</text>
+      <circle r="10" fill="#D4622A" id="ball-m">
+        <animateMotion id="ride-m" dur="2.4s" begin="0.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"><mpath href="#bounce-m"/></animateMotion>
+      </circle>
+    </svg>
+    <svg class="curve curve-d" viewBox="0 0 1200 340" role="img" aria-label="A line falls to the floor, then rises higher than where it started.">
+      <defs>
+        <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#D4622A" stop-opacity=".18"/>
+          <stop offset="1" stop-color="#D4622A" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <line class="floor" x1="0" y1="290" x2="1200" y2="290"/>
+      <path id="bounce" class="line" pathLength="1" d="M100 70 C292 70 400 120 492 272 C502 290 522 290 532 272 C642 96 833 34 1100 16"/>
+      <text class="dim" x="512" y="324" text-anchor="middle">THE LOW POINT</text>
+      <text x="1100" y="60" text-anchor="end">THE SECOND BOUNCE</text>
+      <circle r="11" fill="#D4622A" id="ball">
+        <animateMotion id="ride" dur="2.4s" begin="0.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"><mpath href="#bounce"/></animateMotion>
+      </circle>
+    </svg>
+  </section>
+
+  <section class="cream manifesto">
+    <div class="wrap">
+      <h2>We take over companies with a name, a know-how and a following, and rebuild everything <span class="it">behind them.</span></h2>
+      <p>Founder-built companies whose funding ran out. Family businesses that never went digital. What made them matter is still there. The machine around it needs replacing.</p>
+    </div>
+  </section>
+
+  <section class="tools-sec" id="stack">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>The stack comes <span class="it">with us.</span></h2>
+        <p>Six tools we install in every company we take over. Each one replaces a cost or opens a channel.</p>
+      </div>
+      <div class="tools">
+        <article class="tool">
+          <div class="ui" aria-hidden="true">
+            <span class="bub in">Can I move my appointment to Thursday?</span>
+            <span class="bub out">Done. Thursday, 10:30. Confirmation sent.</span>
+            <span class="bub in">Perfect, thanks.</span>
+          </div>
+          <h3>Desk</h3>
+          <p>Answers, books and routes every client request, day and night.</p>
+          <p class="where">Insurance agents · funeral homes · clinics</p>
+        </article>
+        <article class="tool">
+          <div class="ui" aria-hidden="true">
+            <div class="row"><span>Client since 2014</span><span class="ok">Renewed</span></div>
+            <div class="row"><span>Lapsed 18 months</span><span class="ok">Meeting booked</span></div>
+            <div class="row"><span>Lapsed 3 years</span><span>Follow-up Tue</span></div>
+            <div class="row"><span>Lapsed 2 years</span><span class="ok">Replied</span></div>
+          </div>
+          <h3>Rebound</h3>
+          <p>Wakes up the client file the old owners stopped calling.</p>
+          <p class="where">Brokerages · consultancies · agencies</p>
+        </article>
+        <article class="tool">
+          <div class="ui" aria-hidden="true">
+            <div class="bars"><span style="height:22%"></span><span style="height:30%"></span><span style="height:28%"></span><span style="height:44%"></span><span style="height:58%"></span><span style="height:74%"></span><span style="height:92%"></span></div>
+          </div>
+          <h3>Reach</h3>
+          <p>One engine for new leads, shared across every company we run.</p>
+          <p class="where">B2B services · trade media</p>
+        </article>
+        <article class="tool">
+          <div class="ui" aria-hidden="true">
+            <div class="row"><span>Invoice 2041</span><span class="ok">Paid</span></div>
+            <div class="row"><span>Invoice 2042</span><span class="ok">Paid</span></div>
+            <div class="row"><span>Invoice 2043</span><span>Reminder sent</span></div>
+            <div class="row"><span>Invoice 2044</span><span class="ok">Paid</span></div>
+          </div>
+          <h3>Ledger</h3>
+          <p>Invoicing, collections and reporting that run without a back office.</p>
+          <p class="where">Subscriptions · professional practices</p>
+        </article>
+        <article class="tool">
+          <div class="ui" aria-hidden="true">
+            <div class="tiles"><span></span><span class="on"></span><span></span><span></span><span class="on"></span><span></span><span></span><span class="on"></span><span></span><span></span></div>
+          </div>
+          <h3>Vault</h3>
+          <p>Turns archives, rights and back catalogues into things people pay for.</p>
+          <p class="where">Press titles · publishers · libraries</p>
+        </article>
+        <article class="tool">
+          <div class="ui" aria-hidden="true">
+            <svg class="spark" viewBox="0 0 200 100" preserveAspectRatio="none"><path d="M0 40 L30 46 L60 58 L90 80 L110 84 L130 64 L160 40 L200 14" fill="none" stroke="#D4622A" stroke-width="2.5"/><path d="M0 40 L30 46 L60 58 L90 80 L110 84 L130 64 L160 40 L200 14 L200 100 L0 100Z" fill="rgba(212,98,42,.14)"/></svg>
+          </div>
+          <h3>Pulse</h3>
+          <p>Cash, churn and margin on one screen, from the first week.</p>
+          <p class="where">Every company we run</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cream plays-sec" id="playbooks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Opportunities we are <span class="it">looking for.</span></h2>
+        <p>Four types of business, before and after.</p>
+      </div>
+      <div class="plays">
+        <article class="play">
+          <div><h3>The regional craft house</h3><span class="tag">Illustrative</span></div>
+          <div class="col before"><span>Before</span><p>Three generations of know-how, a name the region grew up with, a loyal clientele that buys in the shop or not at all.</p></div>
+          <div class="col after"><span>After</span><p>The workshop stays exactly as it is. Reach takes the name online and abroad. Vault turns the pattern archive into limited editions. Ledger takes the paperwork off the craftsmen.</p></div>
+        </article>
+        <article class="play">
+          <div><h3>The regional insurance broker</h3><span class="tag">Illustrative</span></div>
+          <div class="col before"><span>Before</span><p>Four thousand loyal clients. Renewals by phone, claims on paper, an office built for 2005.</p></div>
+          <div class="col after"><span>After</span><p>Desk handles renewals and claims intake. Rebound calls the clients nobody called. The team does the advice.</p></div>
+        </article>
+        <article class="play">
+          <div><h3>The trade magazine</h3><span class="tag">Illustrative</span></div>
+          <div class="col before"><span>Before</span><p>A readership that trusts the title, a print run that eats the margin, an archive in boxes.</p></div>
+          <div class="col after"><span>After</span><p>Print sized to demand. Vault opens the archive. Reach turns the readership into events and leads.</p></div>
+        </article>
+        <article class="play">
+          <div><h3>The software company after a missed round</h3><span class="tag">Illustrative</span></div>
+          <div class="col before"><span>Before</span><p>Paying customers and working code, wrapped in a cost base built for a raise that never came.</p></div>
+          <div class="col after"><span>After</span><p>A team sized to the revenue. Ledger runs billing. Pulse keeps everyone honest about cash.</p></div>
+        </article>
+      </div>
+      <p class="plays-note">These playbooks describe types of business. They do not refer to any real company or proceeding.</p>
+    </div>
+  </section>
+
+  <section class="founder" aria-label="Founder">
+    <div class="wrap">
+      <img src="data:image/jpeg;base64,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" width="320" height="407" alt="Portrait of Alexandre Covello">
+      <div class="txt">
+        <h2>Alexandre Covello</h2>
+        <span class="role">Founder</span>
+        <p class="lead">Some companies carry more than revenue: a name people trust, a know-how built over decades, a team that still believes in it. They rarely fail for lack of value. They fail for lack of investment in the tools and the reach the market now demands.</p>
+        <p>Alexandre spent two decades in venture capital, backing companies at their start. Davray &amp; Co is the other end of that story: taking over the ones that deserve to continue, and giving them what they were missing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="media" aria-label="Podcast and newsletter">
+    <a class="m" href="https://www.youtube.com/@second-bounce" target="_blank" rel="noopener">
+      <span class="k">Podcast</span>
+      <h3>Second Bounce</h3>
+      <p>People and companies that came back, and what it took.</p>
+      <span class="go">Listen</span>
+    </a>
+    <a class="m" href="https://sideletters.substack.com" target="_blank" rel="noopener">
+      <span class="k">Newsletter</span>
+      <h3>Side Letters</h3>
+      <p>Essays on markets, companies and the people who run them.</p>
+      <span class="go">Read</span>
+    </a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="brand"><svg viewBox="6 3 20 26" fill="none" aria-hidden="true"><polygon points="12.4,4.3 24,16 12.4,27.7 8,23.4 15.5,16 8,8.5" stroke="#FFFFFF" stroke-width="1.6"/></svg>Davray &amp; Co</span>
+        <address>58 rue de Monceau<br>75008 Paris<br>France</address>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="mailto:contact@davray.co">contact@davray.co</a></li><li>Paris · London</li></ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#cookies">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base"><span>Davray SARL · All rights reserved © 2026</span></div>
+  </div>
+</footer>
+
+<script>
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  [['ride','ball',1100,16],['ride-m','ball-m',560,40]].forEach(function(a){
+    var r=document.getElementById(a[0]); if(r) r.remove();
+    var b=document.getElementById(a[1]); if(b){b.setAttribute('cx',a[2]);b.setAttribute('cy',a[3]);}
+  });
+}
+</script>
+
+</body>
+</html>
